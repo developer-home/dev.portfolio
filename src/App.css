@@ -1,0 +1,14 @@
+.social-icons{
+    display: flex;
+}
+.social-icons>li:hover{
+    cursor: pointer;
+}
+.blink{
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker{
+    50%{
+        opacity: 0;
+    }
+}
