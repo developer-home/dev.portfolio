@@ -84,7 +84,7 @@ const Contact = () => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="mb-1 need_validation"
+                className="mb-5 need_validation"
                 noValidate
               >
                 <div className="row">
