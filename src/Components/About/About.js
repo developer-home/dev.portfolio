@@ -1,9 +1,7 @@
 import React from "react";
 import "./about.css";
-import { FaCss3, FaHtml5, FaNodeJs, FaReact, FaServer } from "react-icons/fa";
-import { TbBrandJavascript } from "react-icons/tb";
-import { SiSpringboot } from "react-icons/si";
-import Web from "../../Static/images/web.jpeg";
+import { BsCheckCircleFill } from "react-icons/bs";
+import { skillData } from "../../Static/Data/Data";
 
 const About = () => {
   return (
@@ -26,8 +24,12 @@ const About = () => {
         <div className=" col-md-8 pt-4 pt-lg-0">
           <h3 className="heading-orange">Software Engineer</h3>
           <p className="text-black fw-bold">
-            Junior software developer with 1 year of experience in software development and administration, I am a result driven individual with knowledge and skills to complete the task assigned.
-            I belive in team work as it build oneself and encourage productivity. I belive i am the person you need to get your work done. Please Contact me. I am open to Employment on either Contract of Parmanent terms.
+            Junior software developer with 1 year of experience in software
+            development and administration, I am a result driven individual with
+            knowledge and skills to complete the task assigned. I belive in team
+            work as it build oneself and encourage productivity. I belive i am
+            the person you need to get your work done. Please Contact me. I am
+            open to Employment on either Contract of Parmanent terms.
           </p>
           <div className="row">
             <div className="col-lg-5">
@@ -50,7 +52,10 @@ const About = () => {
             </div>
           </div>
           <div className="col-mg-12 mt-4">
-            <p className="fw-bold"><span>Note: </span>Download my resume to View my Education background and more Information about me.</p>
+            <p className="fw-bold">
+              <span>Note: </span>Download my resume to View my Education
+              background and more Information about me.
+            </p>
           </div>
         </div>
       </div>
@@ -60,68 +65,25 @@ const About = () => {
         <div>
           <h2>Skills</h2>
           <p>
-            I a have knowledge in the following technologies. But i am not limited to this, I am flexible to learn new skills and technolgies
+            I have knowledge in the following technologies. But i am not
+            limited to this, I am flexible to learn new skills and technolgies
           </p>
           <div className="row">
-            <div className="col-lg-3">
-              <div className=" card align-content-center rounded-5 bg-transparent">
-                <FaServer className="image-center" size={39}/>
-                <h5 className="card-title text-center">Web Development</h5>
-                <div className=" card-body">
-                  <ul className=" list-unstyled text-center text-center">
-                    <li>
-                      <FaHtml5 /> HTML
-                    </li>
-                    <li>
-                      <FaCss3 /> css
-                    </li>
-                    <li>
-                      <TbBrandJavascript /> JAVASCRIPT 
-                    </li>
-                    <li>
-                      <FaReact /> React Js 
-                    </li>
-                  </ul>
+            <div className="about-category">
+              {skillData.map((skill) => (
+                <div className=" card rounded-5 ms-2 bg-transparent">
+                  <img className="image-center" src={skill.icon} alt="" />
+                  <h5 className="card-title ms-3">{skill.skill}</h5>
+                  <div className=" card-body">
+                    {skill.tech.map((tch) => (
+                      <ul className=" list-unstyled about-category" key={1}>
+                        <div><BsCheckCircleFill/></div>
+                        <div><li>{tch} </li></div>
+                      </ul>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className=" col-lg-3">
-              <div className=" card align-content-center rounded-5 bg-transparent">
-                <FaServer size={30} className="image-center" />
-                <h5 className="card-title text-center">Back end & API</h5>
-                <div className=" card-body">
-                  <ul className=" list-unstyled text-center">
-                    <li>
-                      <FaNodeJs /> Node Js 
-                    </li>
-                    <li>
-                      <SiSpringboot /> Spring Boot 
-                    </li>
-                    <li>
-                      <TbBrandJavascript /> JAVASCRIPT 
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className=" col-lg-3">
-              <div className=" card align-content-center rounded-5 bg-transparent">
-                <FaServer className="image-center" size={30} />
-                <h5 className="card-title text-center">Technical Support</h5>
-                <div className=" card-body">
-                  <ul className=" list-unstyled text-center">
-                    <li>
-                      <FaNodeJs />Network Troubleshooting 
-                    </li>
-                    <li>
-                     <SiSpringboot /> Software TR 
-                    </li>
-                    <li>
-                      <TbBrandJavascript />JAVASCRIPT 
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

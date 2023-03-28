@@ -4,35 +4,25 @@ import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
 import Text from "./Static/App_text";
-import resume from "./Static/Resume/res.pdf"
+import resume from "./Static/Resume/res.pdf";
+import { projectData } from "./Static/Data/Data";
 import {
   BsFacebook,
   BsTwitter,
   BsGithub,
   BsWhatsapp,
-  BsDownload
+  BsDownload,
 } from "react-icons/bs";
 import "./App.css";
-import Demo from './Static/images/demo.jpg'
+import Demo from "./Static/images/demo.jpg";
 import { Link } from "react-router-dom";
 
 const App = () => {
-
-  // const DownloadResume=()=>{
-  //   fetch('./Static/Resume/res.pdf').then(response=>{
-  //     response.blob().then(blob=>{
-  //       const fileURL=window.URL.createObjectURL(blob)
-  //       let alink=document.createElement('a')
-  //       alink.href=fileURL
-  //       alink.download= `/Static/Resume/res.pdf`
-  //       alink.click()
-  //     })
-  //   })
-  //  }
-
-  const Handlechat=()=>{
-    window.open("https://api.whatsapp.com/send/?phone=0791980616&text=Hello&type=phone_number&app_absent=0")
-  }
+  const Handlechat = () => {
+    window.open(
+      "https://api.whatsapp.com/send/?phone=0791980616&text=Hello&type=phone_number&app_absent=0"
+    );
+  };
   return (
     <div className=" alert alert-primary">
       <div className=" container">
@@ -55,12 +45,22 @@ const App = () => {
               Development. Now looking for More experience in my field.
             </p>
             <div className=" mb-3">
-              <button onClick={Handlechat} className="btn btn-primary h-25 rounded-5 text-white fw-bold me-2 p-2">
-               <span className=" ms-2 me-2"> Hire Me </span><BsWhatsapp className=" me-2" />
+              <button
+                onClick={Handlechat}
+                className="btn btn-primary h-25 rounded-5 text-white fw-bold me-2 p-2"
+              >
+                <span className=" ms-2 me-2"> Hire Me </span>
+                <BsWhatsapp className=" me-2" />
               </button>
-              <button  className="btn btn-primary h-25 rounded-5 text-white fw-bold p-2">
-                
-               <Link className="text-decoration-none text-white me-2 ms-2" to={resume}> Download Resume</Link><BsDownload  className=" me-2" />
+              <button className="btn btn-primary h-25 rounded-5 text-white fw-bold p-2">
+                <Link
+                  className="text-decoration-none text-white me-2 ms-2"
+                  to={resume}
+                >
+                  {" "}
+                  Download Resume
+                </Link>
+                <BsDownload className=" me-2" />
               </button>
             </div>
             <div className=" col-md-6">
@@ -91,22 +91,27 @@ const App = () => {
         </div>
 
         <About />
-        
+
         {/* Section: Projects */}
         <div className="row mb-5 mt-3">
           <p className=" heading">My Projects</p>
           <div className="project-list">
-            <div className="col-lg-4">
-              <div className="project">
-              <img src={Demo} alt="" />
-              <div className="p_layer">
-                <h3>Sample Heading...</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, odit cum. Minima sequi libero quibusdam error.</p>
-                <Link className="project_btn" to={'/'} >+</Link>
-              </div>
-            </div>
-            </div>
-            
+           
+              {projectData.map((project) => (
+                <div className="project" key={project.id}>
+                  <img src={project.imgage} alt="" />
+                  <div className="p_layer">
+                    <h3>{project.title}</h3>
+                    <p>
+                      {project.description}
+                    </p>
+                    <Link className="project_btn" to={"/projects"}>
+                      +
+                    </Link>
+                  </div>
+                </div>
+              ))}
+           
           </div>
         </div>
 

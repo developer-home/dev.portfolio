@@ -28,10 +28,22 @@
 
 .image-center{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40%;
+    margin-left: 10%;
     margin-top: 10%;
     margin-bottom: 5%;
-    margin-right: 40%;
+    margin-right: 70%;
+}
+
+.about-category{
+    display: flex;
+    gap: 1rem;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    padding: 2rem;
+    gap: 1rem;
+    color: white;
+    justify-content: space-between;
 }
