@@ -5,53 +5,26 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
-  let success = document.getElementById("success");
-  let danger = document.getElementById("danger");
-
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const subject = document.getElementById("subject");
-  const message = document.getElementById("message");
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (
-      name.value == "" ||
-      email.value == "" ||
-      subject.value == "" ||
-      message.value == ""
-    ) {
-      danger.style.display = "block";
-    } else {
-      setTimeout(() => {
-        name.value = "";
-        email.value = "";
-        subject.value = "";
-        message.value = "";
-      }, 2000);
-
-      emailjs
-        .sendForm(
-          "service_q7vj2v7",
-          "template_yfaug3k",
-          form.current,
-          "CJ0aOYnnpRn2H1Sb2"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            success.style.display = "block";
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    }
-    setTimeout(() => {
-      success.style.display = "none";
-      danger.style.display = "none";
-    }, 4000);
+    emailjs
+      .sendForm(
+        "service_q7vj2v7",
+        "template_yfaug3k",
+        form.current,
+        "CJ0aOYnnpRn2H1Sb2"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+         console.log('Message Sent Successfully!')
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -75,7 +48,7 @@ const Contact = () => {
               </p>
             </div>
             <div className=" col-md-6">
-              <p className="mt-3 mb-4">PLease fill this form!</p>
+              <p className="mt-3">PLease fill this form!</p>
               <div className="message">
                 <div className="danger_message" id="danger">
                   <p>All Fields are Required</p>
@@ -84,7 +57,7 @@ const Contact = () => {
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="mb-5 need_validation"
+                className="mb-2 need_validation"
                 noValidate
               >
                 <div className="row">
