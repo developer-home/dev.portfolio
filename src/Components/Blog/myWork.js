@@ -13,7 +13,7 @@ const myWork = () => {
           <h3 className="title">
             My Projects
           </h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, inventore?</p>
+          <p>This are the projects have been doing while learning and in the field.</p>
         </div>
         <div className="row">
           <div className=" col-lg-3">

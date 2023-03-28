@@ -24,10 +24,10 @@ const About = () => {
           />
         </div>
         <div className=" col-md-8 pt-4 pt-lg-0">
-          <h3>Software Engineer</h3>
-          <p className=" fst-italic">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            officia, vitae soluta sunt vel inventore!
+          <h3 className="heading-orange">Software Engineer</h3>
+          <p className="text-black fw-bold">
+            Junior software developer with 1 year of experience in software development and administration, I am a result driven individual with knowledge and skills to complete the task assigned.
+            I belive in team work as it build oneself and encourage productivity. I belive i am the person you need to get your work done. Please Contact me. I am open to Employment on either Contract of Parmanent terms.
           </p>
           <div className="row">
             <div className="col-lg-5">
@@ -49,17 +49,18 @@ const About = () => {
               </li>
             </div>
           </div>
+          <div className="col-mg-12 mt-4">
+            <p className="fw-bold"><span>Note: </span>Download my resume to View my Education background and more Information about me.</p>
+          </div>
         </div>
       </div>
 
       {/* skills */}
-      <section className=" skills" id="skills">
+      <section className=" skills mt-3" id="skills">
         <div>
           <h2>Skills</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            explicabo odit veritatis, aliquid iure eos fuga molestias magnam
-            nesciunt non!
+            I a have knowledge in the following technologies. But i am not limited to this, I am flexible to learn new skills and technolgies
           </p>
           <div className="row">
             <div className="col-lg-3">

@@ -1,3 +1,9 @@
+.heading-orange{
+  color: orange;
+  font-weight: bold;
+  font-size: 27px;
+}
+
 .social-icons {
   display: flex;
 }
