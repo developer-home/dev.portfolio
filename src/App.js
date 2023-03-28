@@ -10,8 +10,7 @@ import {
   BsTwitter,
   BsGithub,
   BsWhatsapp,
-  BsDownload,
-  BsTelephone,
+  BsDownload
 } from "react-icons/bs";
 import "./App.css";
 import Demo from './Static/images/demo.jpg'
@@ -94,28 +93,20 @@ const App = () => {
         <About />
         
         {/* Section: Projects */}
-        <div className="row mb-3">
+        <div className="row mb-5 mt-3">
           <p className=" heading">My Projects</p>
-          <div className=" col-lg-3">
-            <div className="card">
-              <div className=" card-body">
-                <img  className=" card-img" src={Demo} alt="" />
-                <h2 className=" title">Resume Generator</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Autem maiores vitae nulla sit et ab necessitatibus unde
-                  consequatur illo esse.
-                </p>
-                <div className=" text-muted g-2">
-                  <h5>Techologies:</h5>
-                  <ul className="list-unstyled">
-                    <li className="badge bg-info me-2">Js</li>
-                    <li className="badge bg-info me-2">css</li>
-                    <li className="badge bg-info me-2">html</li>
-                  </ul>
-                </div>
+          <div className="project-list">
+            <div className="col-lg-4">
+              <div className="project">
+              <img src={Demo} alt="" />
+              <div className="p_layer">
+                <h3>Sample Heading...</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, odit cum. Minima sequi libero quibusdam error.</p>
+                <Link className="project_btn" to={'/'} >+</Link>
               </div>
             </div>
+            </div>
+            
           </div>
         </div>
 

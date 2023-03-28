@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./contact.css";
 import contact_img from './contact.svg'
+import emailjs from '@emailjs/browser'
 
 
 const Contact = () => {
+  const form= useRef();
+
+  const sendEmail=(e)=>{
+    e.preventDefault();
+    emailjs.sendForm('service_q7vj2v7','template_yfaug3k', form.current,'CJ0aOYnnpRn2H1Sb2').then((result)=>{
+      console.log(result.text)
+      console.log("Message Sent Successfully")
+    },(error)=>{
+      console.log(error.text)
+    })
+  }
 
   return (
     <div className=" container">
@@ -12,14 +24,15 @@ const Contact = () => {
           <div className="row justify-content-center">
             <div className=" col-md-6">
               <h3 className="heading mb-4">Let's talk about everything!</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ab?</p>
+              <p>Please lets connect, contact me and i will respond back to you as soon as possible</p>
               <p><img className="img-fluid" style={{height:"40vh"}} src={contact_img} alt="" /></p>
             </div>
             <div className=" col-md-6">
-              <form action="" className="mb-5 need_validation" noValidate>
+              <p className="mt-3 mb-4">PLease fill this form!</p>
+              <form ref={form} onSubmit={sendEmail} className="mb-5 need_validation" noValidate>
                 <div className="row">
                   <div className=" col-md-12 form-group mb-3">
-                    <input type="text" className=" form-control" name="name" id="name" placeholder="Enter Your Name..." required/>
+                    <input type="text" className=" form-control" name="from_name" id="name" placeholder="Enter Your Name..." required/>
                     <div className=" valid-feedback">
                       This Looks Good!
                     </div>
@@ -27,7 +40,7 @@ const Contact = () => {
                 </div>
                 <div className="row">
                   <div className=" col-md-12 form-group mb-3">
-                    <input type="text" className=" form-control" name="email" id="email" placeholder="Enter Email Adress..." required/>
+                    <input type="text" className=" form-control" name="from_email" id="email" placeholder="Enter Email Adress..." required/>
                   </div>
                 </div>
                 <div className="row">
